@@ -70,10 +70,10 @@ npm install --production 2>&1 | indent
 
 status "Installing bower dependencies"
 npm install bower grunt-cli grunt 2>&1 | indent
-./node_modules/.bin/bower install 2>&1 | indent
+./node_modules/.bin/bower install --allow-root 2>&1 | indent
 
 status "Building app with grunt"
-./node_modules/.bin/grunt build
+./node_modules/.bin/grunt build 2>&1 | indent
 
 status "Pruning dependencies not specified in package.json"
 npm prune 2>&1 | indent
